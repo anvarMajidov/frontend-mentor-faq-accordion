@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 12px;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+main {
+  min-height: 100vh;
+
+  background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  background: transparent;
+  padding: 0.1em 0.2em;
+  cursor: pointer;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  /*Alright I can potentially change this "align items" in future
+  depending on accordion.*/
+
+  width: 86%;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 6.25em 7.92em;
+  background-color: white;
+  border-radius: 22px;
+
+  overflow: hidden;
+}
+
+.image__section {
+  flex-basis: 50%;
+  position: relative;
+}
+
+#img__pattern {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate3d(-579px, -294px, 0);
+
+  display: none;
+}
+
+.accordion {
+  flex-basis: 50%;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.accordion__item {
+  padding: 1.42em 1.25em 1.42em 0;
+  border-bottom: solid 1px hsl(240, 5%, 91%);
+}
+
+.accordion__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  cursor: pointer;
+  color: hsl(237, 12%, 33%);
+  font-size: 14px;
+}
+
+.accordion__question.open {
+  color: hsl(238, 29%, 16%);
+}
+
+.accordion__question:hover {
+  color: hsl(14, 88%, 65%);
+}
+
+.accordion__answer {
+  max-height: 0;
+  color: hsl(240, 6%, 50%);
+  overflow: hidden;
+}
+
+.accordion__answer.open {
+  padding-top: 1.08em;
+}
