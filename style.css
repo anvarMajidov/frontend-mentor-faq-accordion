@@ -22,7 +22,14 @@ main {
 .button {
   background: transparent;
   padding: 0.1em 0.2em;
+  border: none;
   cursor: pointer;
+
+  transition: transform 0.5s ease;
+}
+
+.button.active {
+  transform: rotateZ(180deg);
 }
 
 .card {
@@ -62,6 +69,7 @@ main {
 h1 {
   font-size: 2rem;
   font-weight: 700;
+  padding-bottom: 0.7em;
 }
 
 .accordion__item {
@@ -81,6 +89,7 @@ h1 {
 
 .accordion__question.open {
   color: hsl(238, 29%, 16%);
+  font-weight: 700;
 }
 
 .accordion__question:hover {
@@ -91,8 +100,11 @@ h1 {
   max-height: 0;
   color: hsl(240, 6%, 50%);
   overflow: hidden;
+  padding-right: 1em;
+
+  transition: max-height 0.5s ease, margin-top 0.5s ease;
 }
 
 .accordion__answer.open {
-  padding-top: 1.08em;
+  margin-top: 1.08em;
 }
