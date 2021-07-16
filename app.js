@@ -25,6 +25,7 @@ accordionQuestions.forEach((accQuest, index) => {
       });
       buttons.forEach((el) => el.classList.remove("active"));
 
+      //this line of code opens the panel of accordion
       panel.style.maxHeight = panel.scrollHeight + "px";
 
       accQuest.classList.add("open");
