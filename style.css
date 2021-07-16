@@ -22,6 +22,7 @@ main {
 .button {
   background: transparent;
   padding: 0.1em 0.2em;
+  margin-left: 1em;
   border: none;
   cursor: pointer;
 
@@ -35,20 +36,24 @@ main {
 .card {
   display: flex;
   flex-direction: row;
-  /*Alright I can potentially change this "align items" in future
-  depending on accordion.*/
+  align-items: stretch;
 
-  width: 86%;
+  width: 87.2%;
   max-width: 920px;
   margin: 0 auto;
   background-color: white;
   border-radius: 22px;
 
+  box-shadow: 0px 33px 32px -20px rgba(0, 0, 0, 0.28);
   position: relative;
 }
 
-.image__section {
+.image__section__desktop {
   flex-basis: 50%;
+}
+
+.image__section__mobile {
+  display: none;
 }
 
 .wrapper {
@@ -106,6 +111,7 @@ h1 {
 .accordion__item {
   padding: 1.42em 1.25em 1.42em 0;
   border-bottom: solid 1px hsl(240, 5%, 91%);
+  width: 100%;
 }
 
 .accordion__question {
@@ -131,11 +137,49 @@ h1 {
   max-height: 0;
   color: hsl(240, 6%, 50%);
   overflow: hidden;
-  padding-right: 1em;
+  padding-right: 1.5em;
 
   transition: max-height 0.3s linear, margin-top 0.3s linear;
 }
 
 .accordion__answer.open {
   margin-top: 1.08em;
+}
+
+/*Mobile view*/
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    margin: 30% auto 10%;
+  }
+
+  .accordion {
+    align-items: center;
+    padding: 2em 2em 4em 2em;
+  }
+
+  .image__section__desktop {
+    display: none;
+  }
+
+  .image__section__mobile {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  #woman__mobile {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 80%;
+    max-width: 350px;
+
+    transform: translate3d(-55%, -55%, 0);
+  }
+  #img__pattern__mobile {
+    width: 73.4%;
+    /*should use max width, otherwise it gets too big*/
+    max-width: 320px;
+  }
 }
